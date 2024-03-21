@@ -1,0 +1,337 @@
+/* global variables */
+html {
+    font-size: 10px;
+}
+
+:root {
+    /* typography */
+    --primary-font: "Georgia", sans-serif;
+    --headline-font: 'Parisienne', cursive;
+    --font-size: 1rem;
+    --line-height: 1rem;
+
+    /* colors */
+    --primary-color: #788584;
+    --secondary-color: #bbd2c8;
+    --third-color: #428385;
+    --bg-color-l: #c6c4ab;
+    --text-color: white;
+
+    /* helper */
+    --spacer: 1.5rem;
+    --padding-spacer: calc(var(--spacer)*2);
+    --margin-spacer: calc(var(--spacer)*2.5);
+    --border-radius: 6px;
+}
+
+main {
+    font-family: var(--primary-font);
+    color: var(--primary-color);
+
+    /*new design system*/
+    --bg: var(--secondary-color);
+    /*淡绿*/
+    --heading-bg: var(--third-color);
+    /*深绿*/
+    --heading: var(--text-color);
+    /*白色*/
+    --p-color: var(--primary-color);
+    /*灰绿*/
+    /*Create an style theme and use it on at least 2 components: storyline section and recommend reasons section.*/
+}
+
+p {
+    font-size: calc(var(--font-size)*1.4);
+    line-height: calc(var(--line-height)*2);
+    margin: var(--padding-spacer);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.lotusIcon {
+    width: 40px;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .8rem;
+    font-size: calc(var(--font-size)*2);
+    font-weight: bold;
+    margin: 2.5rem auto 2rem;
+}
+
+
+/*header*/
+.headline {
+    background-color: var(--secondary-color);
+    color: var(--third-color);
+    text-align: center;
+    padding: var(--padding-spacer);
+}
+
+h1 {
+    font-size: calc(var(--font-size)*3);
+    font-family: var(--headline-font);
+    font-weight: 600;
+}
+
+
+/* details section */
+.details {
+    margin: var(--margin-spacer);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    line-height: calc(var(--line-height)*2.5);
+}
+
+h2 {
+    font-size: calc(var(--font-size)*2.5);
+    --accent-color: #ab3d1f;
+    color: var(--accent-color);
+    /*use scoped variables to set the font color*/
+}
+
+h3 {
+    font-size: calc(var(--font-size)*1.5);
+}
+
+.details ul li {
+    height: auto;
+    width: auto;
+    border-radius: var(--border-radius);
+    background-color: var(--third-color);
+    color: white;
+    text-align: center;
+    font-size: calc(var(--font-size)*1.2);
+    padding: 0 1rem;
+}
+
+.details ul {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+h4 {
+    font-size: calc(var(--font-size)*1.2);
+    line-height: calc(var(--line-height)*1.6);
+    margin: 1rem auto;
+}
+
+.icon figure {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
+    gap: 7rem;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 16px;
+    font-size: calc(var(--font-size)*1.2);
+}
+
+/* stars section */
+#stars {
+    margin: var(--padding-spacer) var(--margin-spacer) var(--padding-spacer);
+}
+
+.stars {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.stars img {
+    width: 60px;
+}
+
+.stars figcaption {
+    color: var(--third-color);
+    font-size: calc(var(--font-size)*1.4);
+}
+
+.stars p {
+    font-size: calc(var(--font-size)*0.5);
+    margin: .8rem auto;
+    font-style: italic;
+}
+
+
+/* storyline/recommend/role sections */
+.storyline,
+.favoriteRole {
+    background-color: var(--bg-color-l);
+    padding: var(--padding-spacer);
+}
+
+.reason {
+    padding: var(--margin-spacer);
+}
+
+.cards article {
+    border: solid 1px var(--heading-bg);
+    border-radius: var(--border-radius);
+    margin: var(--padding-spacer) auto;
+    background-color: var(--bg);
+    color: var(--p-color);
+    max-width: 400px;
+}
+
+.cards h3 {
+    text-align: center;
+    background-color: var(--heading-bg);
+    color: var(--heading);
+    padding: .5rem;
+}
+
+.cards figcaption {
+    text-align: center;
+    font-style: italic;
+    padding: .5rem;
+    color: var(--heading-bg);
+}
+
+.cards img,
+.lianhua img {
+    display: block;
+    margin: 0 auto;
+    /* let the image to be block elements, then set the margin "auto", this will hotizontally center the image */
+}
+
+/*Create an style theme and use it on at least 2 components: storyline section and recommend reasons section.*/
+[class*='style-'] {
+    background-color: var(--bg);
+    color: var(--p-color);
+}
+
+.style-invert {
+    --bg: var(--third-color);
+    --heading-bg: var(--secondary-color);
+    --heading: var(--primary-color);
+    --p-color: var(--text-color);
+}
+
+.lianhua ul li {
+    margin: var(--spacer);
+    list-style-type: circle;
+    list-style-position: inside;
+    padding-left: 15px;
+    text-indent: -17px;
+    /*to align with the circle */
+    font-size: calc(var(--font-size)*1.4);
+    line-height: calc(var(--line-height)*2);
+}
+
+/*code for video responsive*/
+#video {
+    --color: #646c55;
+    background-color: var(--color);
+    /*use scoped variables to set the background color of video section*/
+    color: white;
+    padding: var(--padding-spacer);
+}
+
+.video {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+    overflow: hidden;
+    margin: var(--margin-spacer) auto;
+}
+
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* photo section */
+#photos {
+    padding: var(--padding-spacer);
+    background-color: var(--third-color);
+    padding-bottom: 40px;
+    color: white;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+/* footer seciton */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    font-size: calc(var(--font-size)*1.5);
+    padding: var(--padding-spacer);
+}
+
+footer img {
+    width: 48px;
+    margin: 0 10px 0;
+}
+
+
+/*media queries*/
+@media screen and (min-width: 800px) {
+    header div {
+        display: block;
+        height: 600px;
+        width: auto;
+        /*set the size of the container*/
+        background-image: url(../images/hero1500.jpg);
+        background-size: cover;
+        /*control the position of the background image.*/
+        background-position: center;
+        margin-bottom: 7rem;
+    }
+
+    .stars img {
+        width: 80px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin: var(--padding-spacer) auto;
+    }
+
+    .lianhua {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: var(--padding-spacer) auto;
+    }
+
+    .photos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    :root {
+        --font-size: 1.5rem;
+        --line-height: 1.5rem;
+    }
+}
